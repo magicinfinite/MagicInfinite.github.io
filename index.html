@@ -393,6 +393,14 @@ Your Words and Voice">
             </span>
             <span style="background: transparent !important;">arXiv</span>
           </a>
+          <a href="https://github.com/magicinfinite/magicinfinite.github.io/blob/main/MagicInfinite.pdf"
+              class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
+            <span class="icon" style="background: transparent !important;">
+              <img src="./static/images/docs_icon_3.png" alt="Report Icon" 
+                style="width: 100%; height: 100%; object-fit: contain;">
+            </span>
+            <span style="background: transparent !important;">Report</span>
+          </a>
         </span>
         <!-- Video Link. -->
         <!-- <span class="link-block" style="background: transparent !important;">
@@ -446,10 +454,13 @@ Your Words and Voice">
     <div class="columns is-vcentered" style="margin-top: 12rem;">
         <div class="content has-text-justified">
           <p>
-            We present MagicInfinite, 
-            a novel diffusion Transformer (DiT) framework that transcends traditional portrait animation limitations, enabling high-fidelity animation of diverse character types including realistic human portraits, full-body figures, and stylized anime characters.
-            Our approach addresses core challenges through three key innovations. First, we employ 3D full-attention mechanisms that jointly model spatial and temporal dimensions, paired with a sliding window denoising strategy, ensuring robust temporal coherence and visual fidelity across infinite audio lengths and varied character styles, be it humans, animals, or animated figures. Second, we introduce a two-stage curriculum learning scheme that achieves unprecedented multi-modal control, integrating driving audio for precise lip synchronization, textual prompts for expressive dynamics and scene context, and reference images for identity preservation. This allows users to animate characters flexibly, directing their behavior through text and visuals over arbitrarily long sequences. Third, we integrate region-specific masks with adaptive loss functions to precisely regulate the influence of audio on key facial regions, resolving the competing influence problem between global textual control and local audio guidance while supporting speaker-specific animations in solo or multi-character setups.
-            To boost efficiency, we apply comprehensive distillation techniques for sampling steps and classifier-free guidance, achieving a remarkable 20× acceleration in inference speed without compromising quality. With these upgrades, we can generate a 10-second 540x540p video in 10 seconds or a 720x720p video in 30 seconds on 8 H100 GPUs.
+            We present MagicInfinite, a novel diffusion Transformer (DiT) framework that overcomes traditional portrait animation limitations, delivering high-fidelity results across diverse character types—realistic humans, full-body figures, and stylized anime characters.
+            It supports varied facial poses, including back-facing views, andanimates single or multiple characters with input masks for precise speaker designation in multi-character scenes.
+            Our approach tackles key challenges with three innovations: (1) 3D full-attention mechanisms with a sliding window denoising strategy,enabling infinite video generation with temporal coherence and visual quality acrossdiverse character styles; (2) a two-stage curriculum learning scheme, integratingaudio for lip sync, text for expressive dynamics, and reference images for identitypreservation, enabling flexible multi-modal control over long sequences; and (3)region-specific masks with adaptive loss functions to balance global textual controland local audio guidance, supporting speaker-specific animation
+            Efficiency is enhanced via our innovative unified step and cfg distillation techniques, achieving a 20× inference speed boost over the basemodel—generating a 10-second 540x540p video in 10 seconds or 720x720p in 30 seconds on 8 H100 GPUs—without quality loss. Evaluations on our new benchmark demonstrate MagicInfinite’s superiority in audio-lip synchronization, identity preservation, and motion naturalness across diverse scenarios. 
+            It is publicly available at 
+            <a href="https://www.hedra.com/">https://www.hedra.com/</a>, with examples at 
+            <a href="https://magicinfinite.github.io/">https://magicinfinite.github.io/</a>.
           </p>
         </div>
     </div>
@@ -458,6 +469,80 @@ Your Words and Voice">
 
 
 <!-- more specific downstream cases -->
+<!-- Long video -->
+
+<section class="section">
+  <div class="hero-body">
+    <div class="container" style="max-width: 80%;">
+      <h2 class="title is-3">Infinite Long Video</h2>
+      <p> MagicInfinite supports video synthesis of arbitrary lengths and can rapidly generate videos longer than one minute.</p>
+    </div>  
+  </div> 
+  <div class="hero-body" style="margin-top: -4rem;">
+    <div class="container" style="max-width: 80%;">
+      <!-- <video poster="" autoplay controls muted loop playsinline> -->
+          <!-- <source src="./static/magic_human_video/long_video/case1.mp4" -->
+                  <!-- type="video/mp4"> -->
+      <!-- </video> -->
+      <h3 class="title is-4"></h3> 
+      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/002.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/case1.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/003.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/001.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/004.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" controls muted loop playsinline>
+            <source src="./static/magic_human_video/long_video/005.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt"></div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- <div class="container" style="max-width: 80%;"> -->
+      <!-- <h3 class="title is-4"></h3>  -->
+      <!-- <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;"> -->
+        <!--  -->
+      <!-- </div> -->
+    <!-- </div> -->
+    
+
+  </div>
+</section>
+<!-- More style video -->
+
 <section class="section">
   <div class="hero-body">
     <div class="container" style="max-width: 80%;">
@@ -1115,79 +1200,6 @@ Your Words and Voice">
 
   </div>
 </section>
-<!-- Long video -->
-
-<section class="section">
-  <div class="hero-body">
-    <div class="container" style="max-width: 80%;">
-      <h2 class="title is-3">Arbitrary Lengths Videos</h2>
-      <p> MagicInfinite supports video synthesis of arbitrary lengths and can rapidly generate videos longer than one minute.</p>
-    </div>  
-  </div> 
-  <div class="hero-body" style="margin-top: -4rem;">
-    <div class="container" style="max-width: 80%;">
-      <!-- <video poster="" autoplay controls muted loop playsinline> -->
-          <!-- <source src="./static/magic_human_video/long_video/case1.mp4" -->
-                  <!-- type="video/mp4"> -->
-      <!-- </video> -->
-      <h3 class="title is-4"></h3> 
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/002.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/case1.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/003.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/001.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/004.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" controls muted loop playsinline>
-            <source src="./static/magic_human_video/long_video/005.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt"></div>
-        </div>
-        
-      </div>
-    </div>
-    <!-- <div class="container" style="max-width: 80%;"> -->
-      <!-- <h3 class="title is-4"></h3>  -->
-      <!-- <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;"> -->
-        <!--  -->
-      <!-- </div> -->
-    <!-- </div> -->
-    
-
-  </div>
-</section>
-
 
 <!-- Architecture -->
 
